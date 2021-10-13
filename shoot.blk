@@ -1,0 +1,212 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<variables>
+<variable id="(Q;1~2~$D^V__?82C?_d">i</variable>
+</variables>
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" editable="false" x="50" y="50">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="32" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
+<field name="COMMENT">Put initialization blocks here.</field>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="controls_whileUntil" id="^0Kagy/e+Ea{rbZPv2G6">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="e)cr{!2VIET83s,JWC.="/>
+</value>
+<statement name="DO">
+<block type="controls_if" id="u^O:On#wCDf/Pw}?H)cN">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="w}*([.QXXNN+%/cp.pH|">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">A</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="controls_for" id="#S]mVk_v@0,%GEDiUP9O">
+<field name="VAR" id="(Q;1~2~$D^V__?82C?_d">i</field>
+<value name="FROM">
+<shadow type="math_number" id="Mz`kZrxB72C(qkwP|K,R">
+<field name="NUM">-90</field>
+</shadow>
+</value>
+<value name="TO">
+<shadow type="math_number" id="M-d;)8W67d+H%Lp=W1Jn">
+<field name="NUM">90</field>
+</shadow>
+</value>
+<value name="BY">
+<shadow type="math_number" id="0pmKpsgeQ46jgo99?UBF">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<statement name="DO">
+<block type="servo_setProperty_Number" id=":7SbfmiSLRR5%Qv{0[vH">
+<field name="IDENTIFIER">intake1AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"intake1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="E6FGU[+nZd_p3H6g2y?3">
+<field name="NUM">0</field>
+</shadow>
+<block type="variables_get" id="n|p{O4iNZ_=Fs1[qWXt*">
+<field name="VAR" id="(Q;1~2~$D^V__?82C?_d">i</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="servo_setProperty_Number" id="AVfeRwpX+Pb72tEh^|Hz">
+<field name="IDENTIFIER">intake1AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"intake1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Cj[ua^BTJgJ,K$r!moNX">
+<field name="NUM">-90</field>
+</shadow>
+</value>
+<next>
+<block type="controls_if" id="a|qE3!w%Wvifl*XTVx{M">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id=".IlEb6CO,q}|`.AAL-SJ">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">B</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="controls_for" id="V0iF7/{HF|-~KY0+cRFn">
+<field name="VAR" id="(Q;1~2~$D^V__?82C?_d">i</field>
+<value name="FROM">
+<shadow type="math_number" id="A[Nd[!)5+lQO%vY4-srv">
+<field name="NUM">-90</field>
+</shadow>
+</value>
+<value name="TO">
+<shadow type="math_number" id="5CZc*5r)?ZBI^kGh+YKB">
+<field name="NUM">90</field>
+</shadow>
+</value>
+<value name="BY">
+<shadow type="math_number" id="FpW)#?EPI$pdioQacpY6">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<statement name="DO">
+<block type="servo_setProperty_Number" id="`Qy/FPwQyCjqu_e3d:-x">
+<field name="IDENTIFIER">intake2AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"intake2"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">0</field>
+</shadow>
+<block type="variables_get" id="aJ+1]jeR5r#[_UWI@s_;">
+<field name="VAR" id="(Q;1~2~$D^V__?82C?_d">i</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="servo_setProperty_Number" id="f,$?7gmim5Xvm]z-8*pr">
+<field name="IDENTIFIER">intake2AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"intake2"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="C,xsnx%0lCv?HFB:.}cr">
+<field name="NUM">-90</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+<next>
+<block type="controls_if" id="9L$I^%UiVJ8n%?O@7CRp">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="i;|4dt7QZ`RGwboZO({-">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">X</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="controls_for" id="Ha:{veQ+vrf29izpCxON">
+<field name="VAR" id="(Q;1~2~$D^V__?82C?_d">i</field>
+<value name="FROM">
+<shadow type="math_number" id="D7hGUeL]OiZJs}Iz6$l+">
+<field name="NUM">-90</field>
+</shadow>
+</value>
+<value name="TO">
+<shadow type="math_number" id="69PZ+He+~cR(4TkXko(7">
+<field name="NUM">90</field>
+</shadow>
+</value>
+<value name="BY">
+<shadow type="math_number" id="lnZ=G$LZ(C,,IhRH{c@s">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<statement name="DO">
+<block type="servo_setProperty_Number" id="!gda-vL]?}~NEv|_H)S5">
+<field name="IDENTIFIER">intake3AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"intake3"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">0</field>
+</shadow>
+<block type="variables_get" id="o3r6Ap]g4Q7osFw!Octh">
+<field name="VAR" id="(Q;1~2~$D^V__?82C?_d">i</field>
+</block>
+</value>
+</block>
+</statement>
+<next>
+<block type="servo_setProperty_Number" id="8)Mn;m3QMtt@)6g!G^XT">
+<field name="IDENTIFIER">intake3AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"intake3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="|Zx}QYeBNbZwa#^M*eG4">
+<field name="NUM">-90</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" />
+<Enabled value="true" />
+</Extra>

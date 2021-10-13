@@ -1,0 +1,89 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<variables>
+<variable id="NbLhKge[SejX`w9@!K)C">xx</variable>
+</variables>
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" editable="false" x="80" y="64">
+<field name="NAME">runOpMode</field>
+<comment pinned="true" h="32" w="531.9166870117188">This function is executed when this Op Mode is selected from the Driver Station.</comment>
+<statement name="STACK">
+<block type="variables_set" id="?#T**O*4s+6n0_Cd2:`!">
+<field name="VAR" id="NbLhKge[SejX`w9@!K)C">xx</field>
+<next>
+<block type="comment" id="Lc#BFtj*NTB48YL;eBl.">
+<field name="COMMENT">Put initialization blocks here.</field>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="controls_if" id="CH]zY|EhCz93(0p!!EIA">
+<mutation elseif="1" else="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="u!L:octL{KI8~,S+}01`">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftBumper</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="controls_whileUntil" id="HA}r4%#DlFL1mRH/A%K(">
+<field name="MODE">WHILE</field>
+<statement name="DO">
+<block type="dcMotor_setProperty_Number" id="gufONe8T$O^|h`~sMV,$">
+<field name="IDENTIFIER">motor0AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="g;6f3YqGVS[iC8DDx8YW">
+<field name="NUM">1</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="TzJHk]Zu.3OPgKZi^Q{!">
+<field name="IDENTIFIER">motor1AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="7)OHr3;p$f*r?%cV{c8m">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="dcMotor_setProperty_Number" id="KtzHSfB*K]GpBKDkP9eq" x="672" y="281">
+<field name="IDENTIFIER">motor0AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="uI];Q*#w|V]k_4RjU7}7">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+<block type="dcMotor_setProperty_Number" id="T1o6k`%V_H3|C7XI]JK8" x="707" y="359">
+<field name="IDENTIFIER">motor0AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"motor0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Q+u*XS*F?DRh$p2V)il7">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" />
+<Enabled value="true" />
+</Extra>
