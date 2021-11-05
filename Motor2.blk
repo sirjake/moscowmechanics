@@ -3,10 +3,9 @@
 <variable id="zx]RBCY3p!-bwf-?a]Gf">a</variable>
 <variable id="ztNbY*k2.}Q~z+(cqnuN">x</variable>
 <variable id="V$(@[8YJ(8PHTE-r10Sa">moving_power</variable>
-<variable id="(Q;1~2~$D^V__?82C?_d">i</variable>
 <variable id="0nB*jeMi3=w`EuK)fYM,">turning_power</variable>
 </variables>
-<block type="procedures_defnoreturn" id="TM~Nao^prGt^9eVGk}^;" x="-448" y="-367">
+<block type="procedures_defnoreturn" id="TM~Nao^prGt^9eVGk}^;" x="0" y="0">
 <field name="NAME">intake</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
@@ -46,181 +45,11 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="4*d=3r%uzJ{l`XP9!aaV" x="480" y="-403">
-<field name="NAME">shoot</field>
-<comment pinned="false" h="80" w="160">Describe this function...</comment>
-<statement name="STACK">
-<block type="dcMotor_setProperty_Number" id="(,1v:o$qX_7YH;m`lVmA">
-<field name="IDENTIFIER">shootermotor0AsDcMotor</field>
-<field name="PROP">Power</field>
-<data>{"IDENTIFIER":"shootermotor0"}</data>
-<value name="VALUE">
-<shadow type="math_number" id=",+,+Yy85ej6Ba}E5CGWV">
-<field name="NUM">1</field>
-</shadow>
-</value>
-<next>
-<block type="controls_whileUntil" id="!C^x*25b%iH=|GSoM#_@">
-<field name="MODE">UNTIL</field>
-<value name="BOOL">
-<block type="logic_compare" id="d^sq75rk;7tkLcwE+JJ@">
-<field name="OP">EQ</field>
-<value name="A">
-<block type="dcMotor_getProperty_Number" id="@-2|rgX_[U!V~6-r@S2B">
-<field name="IDENTIFIER">shootermotor0AsDcMotor</field>
-<field name="PROP">MaxSpeed</field>
-<data>{"IDENTIFIER":"shootermotor0"}</data>
-</block>
-</value>
-<value name="B">
-<block type="dcMotor_getProperty_Number" id="{X;[4A=j`^([v|~(}1fV">
-<field name="IDENTIFIER">shootermotor0AsDcMotor</field>
-<field name="PROP">Velocity</field>
-<data>{"IDENTIFIER":"shootermotor0"}</data>
-</block>
-</value>
-</block>
-</value>
-<next>
-<block type="controls_whileUntil" id="[gF1#}|=6Bhe`58c{Thw">
-<field name="MODE">WHILE</field>
-<value name="BOOL">
-<block type="logic_compare" id="vn0c7w^=yV}W8JFwOn*N">
-<field name="OP">EQ</field>
-<value name="A">
-<block type="dcMotor_getProperty_Number" id="`B~X;4.|Cz/A;G_4J:aM">
-<field name="IDENTIFIER">shootermotor0AsDcMotor</field>
-<field name="PROP">MaxSpeed</field>
-<data>{"IDENTIFIER":"shootermotor0"}</data>
-</block>
-</value>
-<value name="B">
-<block type="dcMotor_getProperty_Number" id="vYlXC$q}WtPWUep_h63R">
-<field name="IDENTIFIER">shootermotor0AsDcMotor</field>
-<field name="PROP">Velocity</field>
-<data>{"IDENTIFIER":"shootermotor0"}</data>
-</block>
-</value>
-</block>
-</value>
-<statement name="DO">
-<block type="controls_if" id="lnUoubm/7}Lj,KP7H+:$">
-<value name="IF0">
-<block type="gamepad_getProperty_Boolean" id="LYgBP[Q9J!9A55H^|j2e">
-<field name="IDENTIFIER">gamepad1</field>
-<field name="PROP">A</field>
-<data>{"IDENTIFIER":"gamepad1"}</data>
-</block>
-</value>
-<statement name="DO0">
-<block type="controls_for" id="xvR8I2EiB-aaZ5MO!7wb">
-<field name="VAR" id="(Q;1~2~$D^V__?82C?_d">i</field>
-<value name="FROM">
-<shadow type="math_number" id="-ASArKDE3MA%eTC5Z_p?">
-<field name="NUM">-180</field>
-</shadow>
-</value>
-<value name="TO">
-<shadow type="math_number" id="5OT3-U@DP1)-cPzU=Qs_">
-<field name="NUM">180</field>
-</shadow>
-</value>
-<value name="BY">
-<shadow type="math_number" id="y1AEP`^A78E9#U:N(D8Q">
-<field name="NUM">1</field>
-</shadow>
-</value>
-<statement name="DO">
-<block type="servo_setProperty_Number" id="X[Q/t!oq,A5dJv!+t~E|">
-<field name="IDENTIFIER">intake1AsServo</field>
-<field name="PROP">Position</field>
-<data>{"IDENTIFIER":"intake1"}</data>
-<value name="VALUE">
-<shadow type="math_number">
-<field name="NUM">0</field>
-</shadow>
-<block type="variables_get" id="GnkJVgBj~Wo1dlQ8xz3M">
-<field name="VAR" id="(Q;1~2~$D^V__?82C?_d">i</field>
-</block>
-</value>
-</block>
-</statement>
-<next>
-<block type="servo_setProperty_Number" id="A$(tpNmVF,Bc~`FrXa:V">
-<field name="IDENTIFIER">intake1AsServo</field>
-<field name="PROP">Position</field>
-<data>{"IDENTIFIER":"intake1"}</data>
-<value name="VALUE">
-<shadow type="math_number" id="tvlsnSz+WL;W=+vRHsvG">
-<field name="NUM">-90</field>
-</shadow>
-</value>
-</block>
-</next>
-</block>
-</statement>
-</block>
-</statement>
-</block>
-</next>
-</block>
-</next>
-</block>
-</statement>
-</block>
-<block type="procedures_defnoreturn" id="DS2$S.TBuo,]5jkO]M]1" x="-68" y="-229">
+<block type="procedures_defnoreturn" id="DS2$S.TBuo,]5jkO]M]1" x="0" y="144">
 <field name="NAME">loadShooter</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
-<statement name="STACK">
-<block type="servo_setProperty_Direction" id="{$.n6%=d=)p%|M:EAnB,">
-<field name="IDENTIFIER">servo0AsServo</field>
-<field name="PROP">Direction</field>
-<data>{"IDENTIFIER":"servo0"}</data>
-<value name="VALUE">
-<shadow type="servo_typedEnum_direction" id="^bC[P9MCgi[`{$^C;t4E">
-<field name="DIRECTION">FORWARD</field>
-</shadow>
-</value>
-<next>
-<block type="servo_setProperty_Number" id=")sXpk[V2LO7*s(SZGs?w">
-<field name="IDENTIFIER">servo0AsServo</field>
-<field name="PROP">Position</field>
-<data>{"IDENTIFIER":"servo0"}</data>
-<value name="VALUE">
-<shadow type="math_number" id="WL6lXHG2=R/gd)p;pjEo">
-<field name="NUM">0</field>
-</shadow>
-</value>
-<next>
-<block type="servo_setProperty_Number" id="r=!TO5g}6s[i.mTxO3pK">
-<field name="IDENTIFIER">servo0AsServo</field>
-<field name="PROP">Position</field>
-<data>{"IDENTIFIER":"servo0"}</data>
-<value name="VALUE">
-<shadow type="math_number" id="+AS([@1S-y`4Ca$R6z*l">
-<field name="NUM">45</field>
-</shadow>
-</value>
-<next>
-<block type="servo_setProperty_Number" id="je068J_.Kz:lew~@Ffg:">
-<field name="IDENTIFIER">servo0AsServo</field>
-<field name="PROP">Position</field>
-<data>{"IDENTIFIER":"servo0"}</data>
-<value name="VALUE">
-<shadow type="math_number" id="y_ixo.z(XXupU~l]a:fi">
-<field name="NUM">0</field>
-</shadow>
-</value>
 </block>
-</next>
-</block>
-</next>
-</block>
-</next>
-</block>
-</statement>
-</block>
-<block type="procedures_defnoreturn" id="pTa)AD!E6B#Z_.:7ogxl" x="-407" y="-131">
+<block type="procedures_defnoreturn" id="pTa)AD!E6B#Z_.:7ogxl" x="0" y="231">
 <mutation>
 <arg name="a" varid="zx]RBCY3p!-bwf-?a]Gf"/>
 </mutation>
@@ -379,7 +208,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="OpN8!1beqW{8Bw6M/?m+" deletable="false" editable="false" x="47" y="-54">
+<block type="procedures_defnoreturn" id="OpN8!1beqW{8Bw6M/?m+" deletable="false" editable="false" x="0" y="539">
 <field name="NAME">runOpMode</field>
 <comment pinned="false" h="32" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
 <statement name="STACK">
@@ -571,32 +400,6 @@
 <mutation name="setDir"/>
 </block>
 </statement>
-<next>
-<block type="controls_whileUntil" id="5wKt0cFdIe8.C2OW=J45">
-<field name="MODE">WHILE</field>
-<value name="BOOL">
-<block type="gamepad_getProperty_Boolean" id="LeUAu{jMbmn{R}K6]Dow">
-<field name="IDENTIFIER">gamepad1</field>
-<field name="PROP">X</field>
-<data>{"IDENTIFIER":"gamepad1"}</data>
-</block>
-</value>
-<statement name="DO">
-<block type="procedures_callnoreturn" id="+k6hCY@%{Ki%67tyumcg">
-<mutation name="diag">
-<arg name="a"/>
-</mutation>
-<value name="ARG0">
-<block type="gamepad_getProperty_Number" id="+rNYzp$m^CYVXo8o.GxZ">
-<field name="IDENTIFIER">gamepad1</field>
-<field name="PROP">LeftStickX</field>
-<data>{"IDENTIFIER":"gamepad1"}</data>
-</block>
-</value>
-</block>
-</statement>
-</block>
-</next>
 </block>
 </statement>
 </block>
@@ -620,7 +423,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="73]6uFC3{GIpWX=RO*GV" x="834" y="-70">
+<block type="procedures_defnoreturn" id="73]6uFC3{GIpWX=RO*GV" x="0" y="1142">
 <mutation>
 <arg name="x" varid="ztNbY*k2.}Q~z+(cqnuN"/>
 </mutation>
@@ -691,7 +494,37 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="S+6K%|G4K/T|AAl3JAgz" x="576" y="484">
+<block type="procedures_defnoreturn" id="tr[2OyoXRA#Qh6g9pTt5" x="663" y="1196">
+<field name="NAME">temporary exile</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_whileUntil" id="5wKt0cFdIe8.C2OW=J45">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="gamepad_getProperty_Boolean" id="LeUAu{jMbmn{R}K6]Dow">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">X</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO">
+<block type="procedures_callnoreturn" id="+k6hCY@%{Ki%67tyumcg">
+<mutation name="diag">
+<arg name="a"/>
+</mutation>
+<value name="ARG0">
+<block type="gamepad_getProperty_Number" id="+rNYzp$m^CYVXo8o.GxZ">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="S+6K%|G4K/T|AAl3JAgz" x="0" y="1362">
 <field name="NAME">setDir</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
@@ -995,6 +828,6 @@
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Extra>
-<OpModeMeta flavor="TELEOP" group="" />
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
 <Enabled value="true" />
 </Extra>
